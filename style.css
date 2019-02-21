@@ -157,9 +157,17 @@ button:hover {
 .front {
   background-repeat: no-repeat;
   background-size: 100%;
-  background-position: center;
-  background-image: url('images/whopping_crane.jpeg');
+  background-position: cover;
+  /* background-image: url('images/whopping_crane.jpeg'); */
 }
+
+/* .front2 {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: cover;
+  background-image: url('images/Western_Meadowlark.jpg');
+} */
+
 
 .back{
   background-image: url('images/bird.png');
@@ -172,6 +180,6 @@ button:hover {
 
 }
 
-.card:hover > .back {
+/* .card:hover > .back {
   display: none;
-}
+} */
