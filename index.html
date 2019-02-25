@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Chicle" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="main.js"></script>
@@ -20,109 +20,45 @@
       <div class="about">
           <a href="about.html" target="_blank"><i class="fa fa-question fa-fw"></i></a>
       </div>
-
     </header>
 
-    <div class="stats-container">
-      <div>
-        <div class="games-played">
-          <div class="label">Games Played:</div>
-          <div class="value">5</div>
+    <div class="game-space">
+      <div class="stats-container">
+        <div>
+          <div class="games-played">
+            <div class="label">Games Played:</div>
+            <div class="value"></div>
+          </div>
+          <div class="attempts">
+            <div class="label">Attempts:</div>
+            <div class="value"></div>
+          </div>
+          <div class="accuracy">
+            <div class="label">Accuracy:</div>
+            <div class="value"></div>
+          </div>
+          <div class="description">
+            <div class="label">Description:</div>
+            <div class="value"></div>
+            <div class="fun-fact"></div>
+          </div>
+          <button class="reset-button"type="button" name="button">Reset Game</button>
+          <div class="highest-accuracy"></div>
         </div>
-        <div class="attempts">
-          <div class="label">Attempts:</div>
-          <div class="value">5</div>
+      </div>
+      <div id="game-area"></div>
+    </div>
+    <div class="modal">
+      <div class="modal-content">
+        <div class="transparent-box">
+          <i class="fa fa-close"></i>
+          <h2>YOU WIN!</h2>
+          <p class="attempts-after-win"></p>
+          <p class="accuracy-after-win"></p>
+          <p class="highest-accuracy-after-win"></p>
+          <div class="play-again-button"><button>Play Again</button></div>
         </div>
-        <div class="accuracy">
-          <div class="label">Accuracy:</div>
-          <div class="value">50%</div>
-        </div>
-        <div class="description">
-          <div class="label">Description:</div>
-        </div>
-        <button class="reset-button"type="button" name="button">Reset Game</button>
       </div>
     </div>
-
-    <div id="game-area">
-        <!-- <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class=" front front2"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class=" front front2"></div>
-          <div class="back"></div>
-        </div> -->
-        <!-- <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div> -->
-
-    </div>
-
-
   </body>
 </html>
-
-<!-- Birdwatching Game:
-Match the birds -->
