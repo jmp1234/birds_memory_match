@@ -73,7 +73,7 @@ function addEventHandlers() {
     $('.reset-button').on('click', reset_button_clicked);
     $('.play-again-button').on('click', reset_button_clicked);
     $('.play-again-button').on('click', hide_modal);
-    $('.fa-close').on('click', hide_modal);    
+    $('.fa-close').on('click', hide_modal);
 }
 
 
@@ -92,41 +92,11 @@ function card_clicked() {
 
       //CHECK IF THE CARDS ARE THE SAME
       if($(first_card_clicked).children('.front').css('background-image') === $(second_card_clicked).children('.front').css('background-image')) {
-        matches++;
-        accuracy = (matches/attempts*100).toFixed(2) + '%';
+        cardsMatch();
 
-        $(first_card_clicked).children('.back').remove();
-        $(second_card_clicked).children('.back').remove();
-        $('.description .label').text('');
-
-        //ADD DESCRIPTION IF THEY ARE THE SAME:
-        addDescription();
-
-        first_card_clicked = null;
-        second_card_clicked = null;
-
-        //CHECK IF YOU WON
-        if(matches === total_possible_matches) {
-
-          if(accuracy > highest_accuracy || highest_accuracy===0) {
-            localStorage.highest_accuracy =  JSON.stringify(accuracy)
-          }
-
-          show_modal();
-        }
         //IF THE CARDS arent the same, flip back the cards
         } else {
-          accuracy = (matches/attempts*100).toFixed(2) + '%';
-          wait_for_timeout = true;
-          setTimeout(function() {
-            $(first_card_clicked).children('.back').show();
-            $(second_card_clicked).children('.back').show();
-
-            first_card_clicked = null;
-            second_card_clicked = null;
-
-            wait_for_timeout = false;
-          }, 500);
+          notAMatch();
         }
       }
       display_stats();
@@ -161,6 +131,47 @@ function createCards() {
   }
 }
 
+
+
+function checkIfWon() {
+  if(matches === total_possible_matches) {
+
+    if(accuracy > highest_accuracy || highest_accuracy===0) {
+      localStorage.highest_accuracy =  JSON.stringify(accuracy)
+    }
+    show_modal();
+  }
+}
+
+function cardsMatch() {
+  matches++;
+  accuracy = (matches/attempts*100).toFixed(2) + '%';
+
+  $(first_card_clicked).children('.back').remove();
+  $(second_card_clicked).children('.back').remove();
+  $('.description .label').text('');
+
+  addDescription();
+
+  first_card_clicked = null;
+  second_card_clicked = null;
+
+  checkIfWon();
+}
+
+function notAMatch() {
+  accuracy = (matches/attempts*100).toFixed(2) + '%';
+  wait_for_timeout = true;
+  setTimeout(function() {
+    $(first_card_clicked).children('.back').show();
+    $(second_card_clicked).children('.back').show();
+
+    first_card_clicked = null;
+    second_card_clicked = null;
+
+    wait_for_timeout = false;
+  }, 500);
+}
 
 // STATS
 
