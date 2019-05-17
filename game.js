@@ -77,7 +77,7 @@ class BirdGame {
       var card = new BirdCard(photoArray[randomPick].link, this.card_clicked);
       this.cards.push(card);
       photoArray.splice(randomPick, 1);
-      $('#game-area').append(card.render());
+      $('.game-area').append(card.render());
     }
 
   }

@@ -27,8 +27,6 @@ class BirdCard {
       },
     })
 
-    // $(card_div).append(this.card_front);
-    // $(card_div).append(this.card_back);
 
     $(card_div).append(this.card_inner);
     $(this.card_inner).append(this.card_front);

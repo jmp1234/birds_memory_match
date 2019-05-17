@@ -67,6 +67,7 @@ body>* {
 /* MAIN GAME AREA */
 .main {
   height: 77vh;
+  font-size: 0;
 }
 
 
@@ -131,7 +132,7 @@ body>* {
   word-wrap: break-word;
 }
 
-.stats-container, #game-area {
+.stats-container, .game-container {
   display: inline-block;
   vertical-align: top;
 }
@@ -152,11 +153,18 @@ button:hover {
 
 /* GAME AREA */
 
-#game-area {
+.game-container {
+  height: 100%;
+  width: 74%;
+  font-size: 0;
+  display: inline-block;
+}
+
+.game-area {
   background-color: #485461;
   background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
   height: 84%;
-  width: 58%;
+  width: 80%;
   font-size: 0;
   position: relative;
   top: 8.42%;
@@ -308,8 +316,8 @@ button:hover {
 }
 
 @media only screen and (max-width: 990px) {
-  #game-area {
-    width: 70%;
+  .game-area {
+    width: 80%;
   }
 
   .title {
@@ -354,8 +362,8 @@ button:hover {
   .game-header {
     height: 150px;
   }
-  #game-area {
-    height: 75%;
+  .game-area {
+    height: 80%;
   }
   .settings, .about {
     vertical-align: bottom;
