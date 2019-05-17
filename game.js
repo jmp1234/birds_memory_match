@@ -3,7 +3,7 @@
 class BirdGame {
   constructor() {
     this.cards = [];
-    this.total_possible_matches = 9;
+    this.total_possible_matches = 8;
     this.wait_for_timeout = false;
     this.first_card_clicked = null;
     this.second_card_clicked = null;
@@ -49,16 +49,18 @@ class BirdGame {
         bird_description: 'Ferruginous Pygmy-Owls sometimes are active by day, although they primarily are crepuscular. ',
         source: '“Ferruginous Pygmy-Owl Glaucidium Brasilianum.” Neotropical Birds Online, neotropical.birds.cornell.edu/Species-Account/nb/species/fepowl/overview.',
       },
-      'California Condor': {
-        link: 'images/California_Condor.jpg',
-        bird_description: 'California Condors are the largest wild birds in North America.',
-        source: '“California Condor Identification, All About Birds, Cornell Lab of Ornithology.” , All About Birds, Cornell Lab of Ornithology, www.allaboutbirds.org/guide/California_Condor/id.',
-      },
+      // 'California Condor': {
+      //   link: 'images/California_Condor.jpg',
+      //   bird_description: 'California Condors are the largest wild birds in North America.',
+      //   source: '“California Condor Identification, All About Birds, Cornell Lab of Ornithology.” , All About Birds, Cornell Lab of Ornithology, www.allaboutbirds.org/guide/California_Condor/id.',
+      // },
     }
 
     this.card_clicked = this.card_clicked.bind(this);
     this.reset_button_clicked = this.reset_button_clicked.bind(this);
     this.hide_modal = this.hide_modal.bind(this);
+    this.display_game = this.display_game.bind(this);
+    this.close_game_modal = this.close_game_modal.bind(this);
 
     this.clickHandlers();
 
@@ -176,6 +178,16 @@ class BirdGame {
       $('.modal').hide();
   }
 
+  display_game() {
+    $('.start-modal').css({
+      display: 'block'
+    });
+  }
+
+  close_game_modal() {
+    $('.start-modal').css('display', 'none');
+  }
+
 
 
   clickHandlers() {
@@ -183,6 +195,8 @@ class BirdGame {
     $('.play-again-button').on('click', this.reset_button_clicked);
     $('.play-again-button').on('click', this.hide_modal);
     $('.fa-close').on('click', this.hide_modal);
+    $('.play-button').on('click', this.display_game);
+    $('.fa-window-close').on('click', this.close_game_modal)
   }
 
 
