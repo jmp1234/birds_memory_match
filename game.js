@@ -78,14 +78,13 @@ class BirdGame {
       this.cards.push(card);
       photoArray.splice(randomPick, 1);
       $('#game-area').append(card.render());
-      console.log(card)
     }
 
   }
 
   card_clicked(card) {
-    if(!this.wait_for_timeout && $(card.domElement).children().length === 2) {
-      $(card.card_back).hide();
+    if(!this.wait_for_timeout && $(card.card_inner).children().length === 2) {
+      $(card.card_inner).addClass('card-flip');
 
       //ASSIGN FIRST CARD CLICKED
       if(this.first_card_clicked === null) {
@@ -111,7 +110,6 @@ class BirdGame {
   cardsMatch() {
     this.stats.matches++;
     this.stats.accuracy = (this.stats.matches/this.stats.attempts*100).toFixed(2) + '%';
-    console.log(this.stats.accuracy)
 
     $(this.first_card_clicked.card_back).remove();
     $(this.second_card_clicked.card_back).remove();
@@ -136,17 +134,16 @@ class BirdGame {
 
   notAMatch() {
     this.stats.accuracy = (this.stats.matches/this.stats.attempts*100).toFixed(2) + '%';
-    console.log(this.stats.accuracy)
     this.wait_for_timeout = true;
     setTimeout(function() {
-      $(this.first_card_clicked.card_back).show();
-      $(this.second_card_clicked.card_back).show();
+      $(this.first_card_clicked.card_inner).removeClass('card-flip');
+      $(this.second_card_clicked.card_inner).removeClass('card-flip');
 
       this.first_card_clicked = null;
       this.second_card_clicked = null;
 
       this.wait_for_timeout = false;
-    }.bind(this), 500);
+    }.bind(this), 1200);
   }
 
   reset_button_clicked() {
