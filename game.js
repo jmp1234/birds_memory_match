@@ -125,6 +125,8 @@ class BirdGame {
   }
 
   checkIfWon() {
+    console.log('matches: ', this.stats.matches)
+    console.log('total possible matches: ', this.total_possible_matches)
     if(this.stats.matches === this.total_possible_matches) {
 
       if(this.stats.accuracy > this.stats.highest_accuracy || this.stats.highest_accuracy===0) {
@@ -179,9 +181,10 @@ class BirdGame {
   }
 
   display_game() {
-    $('.start-modal').css({
-      display: 'block'
-    });
+    // $('.start-modal').css({
+    //   display: 'block'
+    // });
+    $('.start-modal').fadeIn();
   }
 
   close_game_modal() {

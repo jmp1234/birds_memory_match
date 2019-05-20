@@ -2,10 +2,12 @@ body {
   margin: 0;
   font-size: 0;
   font-family: 'Open Sans', sans-serif;
+  height: 100vh;
   /* background-color: rgba(135,206,250); */
 }
 body>* {
   /* font-size: 1rem; */
+
 }
 
 
@@ -74,11 +76,15 @@ body>* {
  background-size: cover;
  background-position: center;
  background-repeat: no-repeat;
- height: 100vh;
+ height: 100%;
  font-size: 1rem;
 }
 h1 {
   margin-top: 0;
+}
+
+.play-button:hover {
+  font-size: 30px;
 }
 
 
@@ -251,6 +257,7 @@ button:hover {
   padding-top: 25vh;
   display: none;
   z-index: 2;
+  font-size: 1rem;
 }
 
 .modal-content {
@@ -320,6 +327,7 @@ button:hover {
   left: 0;
   top: 0;
   width: 100%;
+  /* width: 100vh; */
   height: 100%;
   background-color: rgb(0,0,0);
   /* background-color: rgba(0,0,0,0.1); */
@@ -328,16 +336,19 @@ button:hover {
   background-position: center;
   background-repeat: no-repeat;
   /* margin-left: 10%; */
-  border: 1px solid white;
 
 }
 
 .fa-window-close {
   color: #aaa;
-  float: right;
+  right: 0;
   font-size: 50px;
   font-weight: bold;
   cursor: pointer;
+  position: absolute;
+}
+.fa-window-close:hover {
+  font-size: 55px;
 }
 
 .fa-windowclose:hover,
@@ -349,19 +360,28 @@ button:hover {
 
 .start-modal .stats-container {
 }
+
+.start-modal .game-and-stats {
+  height: 85vh;
+  width: 65vh;
+  /* background-color: red; */
+  margin: 0 auto;
+
+}
+
 .start-modal .game-area {
   font-size: 0;
   box-shadow: 0 10px 6px -6px #777;
   border-radius: 1%;
-  margin: 5% auto;
-  border: 1px solid #888;
+  /* margin: 5% auto; */
+  /* border: 1px solid #888; */
   width: 65vh;
   height: 65vh;
   display: inline-block;
-  position: absolute;
-  left: 50%;
+  position: relative;
+  /* left: 50%;
   top: 30%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
   background-color: transparent;
 
 
@@ -383,7 +403,10 @@ button:hover {
   perspective: 1000px;
   background-color: transparent;
   cursor: pointer;
-
+}
+.start-modal .back:hover {
+  width: 89%;
+  height: 89%;
 }
 
 
@@ -430,18 +453,48 @@ button:hover {
 }
 
 .statistics {
-  background-color: red;
+  /* background-color: green; */
   font-size: 2rem;
-  /* position: relative;
-  transform: translate(-50%, -50%); */
-  /* width: 65vh;
-  height: 15vh;
-  margin: 5% auto;
-  left: 50%;
-  top: 90vh; */
+  position: relative;
   display: inline-block;
   width: 100%;
   height: 25%;
+}
+
+.statistics .attempts, .accuracy {
+  width: 40%;
+  display: inline-block;
+  height: 30%;
+}
+
+.accuracy {
+  position: absolute;
+  right: 0;
+}
+
+.statistics .label {
+  position: absolute;
+  font-size: 1rem;
+}
+
+.statistics .value {
+  padding: 0;
+  text-align: right;
+  top: 0;
+  font-size: 1rem;
+  margin-top: 5%;
+}
+.attempts .value {
+  padding-right: 2%;
+}
+
+.description {
+  height: 60%;
+  margin: 0 auto;
+}
+.statistics .description .value {
+  margin-top: 0;
+  text-align: center;
 }
 
 
