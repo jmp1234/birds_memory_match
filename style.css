@@ -218,9 +218,10 @@ button:hover {
 }
 .play-again-button button {
   background-image: url('images/bird.png'), linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+  border-radius: 4px;
 }
 .transparent-box {
-  background-color: rgba(255,250,240,0.7);
+  background-color: rgba(238,232,170, 0.8);
   height: 100%;
   position: absolute;
   width: 100%;
@@ -347,8 +348,8 @@ button:hover {
   cursor: pointer;
 }
 .start-modal .back:hover {
-  width: 89%;
-  height: 89%;
+  width: 93.8%;
+  height: 93.8%;
 }
 
 
@@ -367,11 +368,11 @@ button:hover {
 
 
 .start-modal  .front, .back {
-  height: 90%;
-  width: 90%;
+  height: 95%;
+  width: 95%;
   position: absolute;
-  top: 5%;
-  left: 5%;
+  top: 2.5%;
+  left: 2.5%;
   box-sizing: border-box;
   border-radius: 5px;
   background-repeat: no-repeat;
