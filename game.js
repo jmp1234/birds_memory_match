@@ -186,6 +186,7 @@ class BirdGame {
 
   close_game_modal() {
     $('.start-modal').css('display', 'none');
+    this.reset_button_clicked();
   }
 
 
