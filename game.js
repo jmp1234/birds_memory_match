@@ -181,9 +181,6 @@ class BirdGame {
   }
 
   display_game() {
-    // $('.start-modal').css({
-    //   display: 'block'
-    // });
     $('.start-modal').fadeIn();
   }
 

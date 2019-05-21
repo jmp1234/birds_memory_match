@@ -1,8 +1,9 @@
 body {
   margin: 0;
   font-size: 0;
-  font-family: 'Open Sans', sans-serif;
+  /* font-family: 'Open Sans', sans-serif; */
   height: 100vh;
+  font-family: 'Work Sans', sans-serif;
   /* background-color: rgba(135,206,250); */
 }
 body>* {
@@ -83,8 +84,15 @@ h1 {
   margin-top: 0;
 }
 
+.play-button {
+  cursor: pointer;
+  text-shadow: 0.15vw 0.15vw rgba(0, 55, 214, 0.67);
+  font-family: 'Anton', sans-serif;
+  font-size: 3rem;
+}
+
 .play-button:hover {
-  font-size: 30px;
+  font-size: 3.4rem;
 }
 
 
@@ -359,6 +367,7 @@ button:hover {
 }
 
 .start-modal .stats-container {
+  position: absolute;
 }
 
 .start-modal .game-and-stats {
@@ -366,6 +375,9 @@ button:hover {
   width: 65vh;
   /* background-color: red; */
   margin: 0 auto;
+  /* background-color: rgba(241, 231, 254, 0.4) */
+  /* position: absolute;
+  display: inline-block; */
 
 }
 
@@ -375,14 +387,16 @@ button:hover {
   border-radius: 1%;
   /* margin: 5% auto; */
   /* border: 1px solid #888; */
-  width: 65vh;
+  /* width: 65vh; */
+  width: 100%;
   height: 65vh;
   display: inline-block;
   position: relative;
   /* left: 50%;
   top: 30%;
   transform: translate(-50%, -50%); */
-  background-color: transparent;
+
+  background-color: rgba(241, 231, 254, 0.4)
 
 
 }
@@ -458,7 +472,7 @@ button:hover {
   position: relative;
   display: inline-block;
   width: 100%;
-  height: 25%;
+  height: 23.6%;
 }
 
 .statistics .attempts, .accuracy {
@@ -467,7 +481,7 @@ button:hover {
   height: 30%;
 }
 
-.accuracy {
+.statistics .accuracy {
   position: absolute;
   right: 0;
 }
@@ -484,7 +498,7 @@ button:hover {
   font-size: 1rem;
   margin-top: 5%;
 }
-.attempts .value {
+.statistics .attempts .value {
   padding-right: 2%;
 }
 
