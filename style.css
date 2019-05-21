@@ -95,7 +95,7 @@ h1 {
   position: relative;
 }
 .game-title h1 {
-  font-size: 3.3rem;
+  font-size: 3.5rem;
 }
 .game-title h3 {
   font-size: 3rem;
@@ -374,11 +374,13 @@ button:hover {
 
 .main-cards {
   position: relative;
-  height: 27%;
-  width: 100%;
+  height: 22%;
+  width: 60%;
   display: inline-block;
   border-radius: 4px;
   padding: 0 auto;
+  left: 0;
+  font-size: 0;
 }
 .card-main {
   background-image: url('images/bird.png'), linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
@@ -387,10 +389,12 @@ button:hover {
   background-repeat: no-repeat;
   border: darkblue solid;
   background-color: #b8c6db;
-  /* height: 100px; */
-  width: 90px;
-  position: absolute;
-  height: 120px;
+  display: inline-block;
+  width: 33%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 4px;
+  opacity: 0.9;
 }
 .left {
    transform: rotate3d(0.1,0.1, 0.1, 15deg);
