@@ -59,14 +59,14 @@ body {
  -moz-box-shadow:    inset 0 0 10px #000000;
 -webkit-box-shadow: inset 0 0 10px #000000;
 box-shadow:         inset 0 0 10px #000000;
-
+box-sizing: border-box;
 }
 h1 {
   margin-top: 0;
 }
 
 .play-game {
-  margin-top: 12%;
+  margin-top: 9.1%;
 }
 
 .play-button {
@@ -74,7 +74,7 @@ h1 {
   text-shadow: 0.15vw 0.15vw rgba(0, 55, 214, 0.67);
   font-family: 'Merriweather Sans', sans-serif;
   font-size: 2.2rem;
-  border: 4px solid gold;
+  border: 5px solid gold;
   border-radius: 10px;
   color: white;
   background-color: #045de9;
@@ -95,10 +95,10 @@ h1 {
   position: relative;
 }
 .game-title h1 {
-  font-size: 3.5rem;
+  font-size: 3.7rem;
 }
 .game-title h3 {
-  font-size: 3rem;
+  font-size: 3.2rem;
 }
 
 
@@ -374,13 +374,16 @@ button:hover {
 
 .main-cards {
   position: relative;
-  height: 22%;
+  /* height: 22%; */
   width: 60%;
   display: inline-block;
   border-radius: 4px;
-  padding: 0 auto;
+  padding: auto;
   left: 0;
   font-size: 0;
+  margin-top: 5%;
+  border-bottom: 3px solid gold;
+  padding-bottom: 3%;
 }
 .card-main {
   background-image: url('images/bird.png'), linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
@@ -390,11 +393,11 @@ button:hover {
   border: darkblue solid;
   background-color: #b8c6db;
   display: inline-block;
-  width: 33%;
-  height: 100%;
+  width: 15vh;
+  height: 20vh;
   box-sizing: border-box;
   border-radius: 4px;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 .left {
    transform: rotate3d(0.1,0.1, 0.1, 15deg);
@@ -500,11 +503,19 @@ button:hover {
 }
 @media only screen and (max-width: 770px) {
 
-  .title {
-    font-size: 1.4rem;
+  .game-title h1 {
+    font-size: 3.2rem;
   }
-  .title h1 {
-    border-bottom: solid black;
+  .game-title h3 {
+    font-size: 2.7rem;
+  }
+  .card-main {
+    width: 12vh;
+    height: 17vh;
+  }
+
+  .play-game {
+    margin-top: 15%;
   }
 
 
@@ -531,7 +542,38 @@ button:hover {
 }
 
 @media only screen and (max-width: 580px) {
-  body {
-    width: 580px;
+
+  .card-main {
+    width: 10vh;
+    height: 15vh;
+  }
+
+  .main {
+    padding-top: 10%;
+  }
+  .play-button {
+    font-size: 2.0rem;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .main {
+    width: 100%;
+  }
+  .card-main {
+    width: 7vh;
+    height: 12vh;
+  }
+  .play-game {
+    margin-top: 20%;
+  }
+  .play-button {
+    font-size: 1.8rem;
+  }
+  .game-title h1 {
+    font-size: 2.9rem;
+  }
+  .game-title h3 {
+    font-size: 2.4rem;
   }
 }
