@@ -7,6 +7,11 @@ body {
   background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
 }
 
+.fa {
+  cursor: pointer;
+}
+
+
 
 /* MAIN GAME AREA */
 .main {
@@ -145,11 +150,14 @@ overflow: auto;
   left: 50%;
   position: relative;
   transform: translateX(-50%);
+  border-radius: 4px;
+  background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
 }
 
 
-button:hover {
+.reset-button:hover {
   cursor: pointer;
+  background-image: none;
   background-color: gainsboro;
 }
 
@@ -179,7 +187,6 @@ button:hover {
   width: 510px;
   margin: 0 auto;
   text-align: center;
-  /* font-family: 'Chicle', cursive; */
   font-family: 'Merriweather Sans', sans-serif;
   position: relative;
   color: blue;
@@ -188,13 +195,15 @@ button:hover {
 .modal-content h2 {
   font-size: 55px;
   font-weight: bold;
+  margin-bottom: 2vh;
 }
 .play-again-button {
-  margin-top: 38px;
+  margin-top: 4vh;
 }
 .play-again-button button {
   background-image: url('images/bird.png'), linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
   border-radius: 4px;
+  cursor: pointer;
 }
 .transparent-box {
   background-color: rgba(238,232,170, 0.8);
@@ -230,6 +239,66 @@ button:hover {
 }
 .modal .fa-close:hover {
   font-size: 30px;
+}
+
+/*HELP MODAL*/
+.help-modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  background-color: transparent;
+}
+.help-modal .fa-close {
+  position: absolute;
+  font-size: 2rem;
+  right: 0.5px;
+  top: 0;
+}
+
+.help-modal .fa-close:hover {
+  font-size: 2.4rem;
+}
+
+
+.help-modal .instructions{
+  height: 65%;
+  background-color: rgba(240,230,140,0.7);
+  padding-top: 2vh;
+  margin-top: 5vh;
+  border-radius: 5px;
+  width: 85vh;
+  margin: 0 auto;
+  box-sizing: border-box;
+  margin-top: 8vh;
+  position: relative;
+  border: 2px solid dodgerblue;
+}
+
+.help-modal p {
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  text-align: center;
+  font-size: 1.2rem;
+  padding-top: 4vh;
+}
+
+.help-modal ol {
+  font-size: 1.2rem;
+}
+
+.help-modal li {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.help-modal h3 {
+  text-align: center;
+  font-size: 1.6rem;
 }
 
 /*GAME MODAL*/
@@ -479,6 +548,18 @@ button:hover {
     text-align: left;
     font-size: 0.7rem;
   }
+  .help-modal p {
+    font-size: 1.0rem;
+    padding-top: 3vh;
+  }
+
+  .help-modal ol {
+    font-size: 1.0rem;
+  }
+
+  .help-modal h3 {
+    font-size: 1.3rem;
+  }
 }
 @media only screen and (max-width: 770px) {
 
@@ -525,6 +606,22 @@ button:hover {
   .stats-container > div {
     width: 80%;
   }
+
+  .help-modal .instructions{
+    width: 95%;
+  }
+  .help-modal p {
+    font-size: 1.0rem;
+    padding-top: 3vh;
+  }
+
+  .help-modal ol {
+    font-size: 1.0rem;
+  }
+
+  .help-modal h3 {
+    font-size: 1.3rem;
+  }
 }
 
 
@@ -569,6 +666,7 @@ button:hover {
   .play-again-button button:hover {
     font-size: 1.2rem;
   }
+
 }
 
 @media only screen and (max-width: 420px) {
@@ -636,6 +734,19 @@ button:hover {
   }
   .modal-content p {
     font-size: 0.9rem;
+  }
+
+  .help-modal p {
+    font-size: 0.8rem;
+    padding-top: 1vh;
+  }
+
+  .help-modal ol {
+    font-size: 0.8rem;
+  }
+
+  .help-modal h3 {
+    font-size: 1.1rem;
   }
 
 }

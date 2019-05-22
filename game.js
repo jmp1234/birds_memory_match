@@ -61,6 +61,7 @@ class BirdGame {
     this.hide_modal = this.hide_modal.bind(this);
     this.display_game = this.display_game.bind(this);
     this.close_game_modal = this.close_game_modal.bind(this);
+    this.open_help_modal = this.open_help_modal.bind(this);
 
     this.clickHandlers();
   }
@@ -161,6 +162,7 @@ class BirdGame {
     this.createCards();
   }
 
+//DISPLAY GAME OVER MODAL
   show_modal () {
     this.stats.setNewHighScore();
     $('.attempts-after-win').text('You had ' + this.stats.attempts + ' attempts');
@@ -175,9 +177,14 @@ class BirdGame {
   }
 
   hide_modal() {
-      $('.modal').hide();
+      if($('.modal').css('display') !== 'none') {
+        $('.modal').hide();
+      } else {
+        $('.help-modal').hide();
+      }
   }
 
+//DISPLAY GAME
   display_game() {
     $('.start-modal').fadeIn();
   }
@@ -187,15 +194,20 @@ class BirdGame {
     this.reset_button_clicked();
   }
 
+  //DISPLAY HELP Modal
+  open_help_modal() {
+    $('.help-modal').fadeIn();
+  }
 
 
   clickHandlers() {
     $('.reset-button').on('click', this.reset_button_clicked);
     $('.play-again-button').on('click', this.reset_button_clicked);
     $('.play-again-button').on('click', this.hide_modal);
-    $('.modal .fa-close').on('click', this.hide_modal);
+    $('.fa-close').on('click', this.hide_modal);
     $('.play-button').on('click', this.display_game);
-    $('.start-modal .fa-close').on('click', this.close_game_modal)
+    $('.start-modal .fa-close').on('click', this.close_game_modal);
+    $('.fa-question').on('click', this.open_help_modal);
   }
 
 
