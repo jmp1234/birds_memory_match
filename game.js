@@ -63,7 +63,6 @@ class BirdGame {
     this.close_game_modal = this.close_game_modal.bind(this);
 
     this.clickHandlers();
-
   }
 
   createCards() {
