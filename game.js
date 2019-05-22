@@ -195,9 +195,9 @@ class BirdGame {
     $('.reset-button').on('click', this.reset_button_clicked);
     $('.play-again-button').on('click', this.reset_button_clicked);
     $('.play-again-button').on('click', this.hide_modal);
-    $('.fa-close').on('click', this.hide_modal);
+    $('.modal .fa-close').on('click', this.hide_modal);
     $('.play-button').on('click', this.display_game);
-    $('.fa-window-close').on('click', this.close_game_modal)
+    $('.start-modal .fa-close').on('click', this.close_game_modal)
   }
 
 

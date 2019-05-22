@@ -7,18 +7,6 @@ body {
   background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
 }
 
-/* HEADER */
-
-
-.game-logo {
-  height: 27%;
-}
-.game-logo img {
-  height: 100%;
-}
-
-
-
 
 
 /* .fa-cog, .fa-question, .fa-play-circle {
@@ -46,23 +34,22 @@ body {
  background-repeat: no-repeat;
  height: 100%;
  font-size: 1rem;
- width: 75%;
+ /* width: 75%; */
+ width: 115vh;
  position: fixed;
  left: 50%;
  transform: translateX(-50%);
- border: 5px solid rgba(255, 215, 0, 0.6);
+ border: 7px solid rgba(255, 215, 0, 0.6);
  -moz-box-shadow:    inset 0 0 10px #000000;
 -webkit-box-shadow: inset 0 0 10px #000000;
 box-shadow:         inset 0 0 10px #000000;
 box-sizing: border-box;
 overflow: auto;
 }
-h1 {
-  margin-top: 0;
-}
+
 
 .play-game {
-  margin-top: 9.1%;
+  margin-top: 8vh;
 }
 
 .play-button {
@@ -89,12 +76,15 @@ h1 {
   text-shadow: 1px 1px 1px #000,
              3px 3px 5px blue;
   position: relative;
+  height: 30vh;
 }
 .game-title h1 {
   font-size: 3.7rem;
+  margin-top: 2vh;
 }
 .game-title h3 {
   font-size: 3.2rem;
+  margin: 0;
 }
 
 
@@ -278,7 +268,6 @@ button:hover {
 
 .start-modal .fa-close, .start-modal .fa-question {
   font-size: 50px;
-  /* font-weight: bold; */
   cursor: pointer;
   position: absolute;
   color: 	rgba(255,215,0, 0.8);
@@ -383,10 +372,9 @@ button:hover {
 
 .main-cards {
   position: relative;
-  /* height: 22%; */
   width: 60%;
   display: inline-block;
-  border-radius: 4px;
+  border-radius: 6px;
   padding: auto;
   left: 0;
   font-size: 0;
@@ -402,8 +390,8 @@ button:hover {
   border: darkblue solid;
   background-color: #b8c6db;
   display: inline-block;
-  width: 15vh;
-  height: 20vh;
+  width: 13vh;
+  height: 18vh;
   box-sizing: border-box;
   border-radius: 4px;
   opacity: 0.95;
@@ -431,7 +419,7 @@ button:hover {
   position: relative;
   display: inline-block;
   width: 100%;
-  height: 35%;
+  height: 30%;
 }
 
 .statistics .attempts, .accuracy {
@@ -457,17 +445,13 @@ button:hover {
   font-size: 1rem;
   margin-top: 5%;
   font-weight: bold;
-  /* background-color: gold;
-  display: inline-block; */
-  /* position: absolute;
-  right: 0; */
 }
 .statistics .attempts .value {
   padding-right: 2%;
 }
 
 .description {
-  height: 30%;
+  height: 35%;
   margin: 0 auto;
 }
 .statistics .description .value {
@@ -534,7 +518,7 @@ button:hover {
   }
 
   .play-game {
-    margin-top: 15%;
+    margin-top: 11vh;
   }
 
 
@@ -584,7 +568,7 @@ button:hover {
     right: 0;
     font-size: 22px;
   }
-  .start-modal .fa-close:hover, .start-modal .fa-question {
+  .start-modal .fa-close:hover, .start-modal .fa-question:hover {
     font-size: 27px;
   }
 }
@@ -599,7 +583,7 @@ button:hover {
     height: 25vw;
   } */
   .play-game {
-    margin-top: 20%;
+    margin-top: 15vh;
   }
   .play-button {
     font-size: 1.8rem;
@@ -620,5 +604,28 @@ button:hover {
     height: 43vh;
     margin-top: 10%;
   }
+}
 
+@media only screen and (max-height: 532px) {
+  .main-cards {
+    margin-top: 8%;
+  }
+}
+
+@media only screen and (max-height: 479px) {
+  .game-title h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2vh;
+  }
+  .game-title h3 {
+    font-size: 2rem;
+  }
+
+  .play-game {
+    margin-top: 20px;
+  }
+
+  .main {
+    padding-top: 0;
+  }
 }
