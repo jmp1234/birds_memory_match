@@ -31,7 +31,7 @@ class BirdGame {
       },
       'Siamese Fireback': {
         link: 'images/SIAMESE_FIREBACK.jpg',
-        bird_description: 'The Siamese Fireback is an impressive bird with bright red wattles and legs, a beautifully curved tail and crest and delicately marked grey feathered body.',
+        bird_description: 'An impressive bird with bright red wattles and legs, a beautifully curved tail and crest and delicately marked grey feathered body.',
         source: '“Siamese Fireback.” Boreal Forest Animals, thewebsiteofeverything.com/animals/birds/Galliformes/Phasianidae/Lophura-diardi.',
       },
       'Red Flanked Bluetail': {

@@ -120,7 +120,7 @@ overflow: auto;
   text-align: left;
   padding-left: 5px;
   padding-right: 5px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: white;
 }
 
@@ -449,6 +449,7 @@ button:hover {
   text-align: center;
   font-weight: bold;
   color: white;
+  text-shadow: 1px 1px 2px black;
 }
 
 

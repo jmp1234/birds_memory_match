@@ -12,7 +12,7 @@ class Stats {
 
 
   resetDescriptionBox() {
-    $('.description .label').text('Description:')
+    $('.description .label').text('Description of Bird:')
     $('.description .value').text(' ');
     $('.description .fun-fact').text(' ');
   }
