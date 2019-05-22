@@ -125,8 +125,7 @@ class BirdGame {
   }
 
   checkIfWon() {
-    console.log('matches: ', this.stats.matches)
-    console.log('total possible matches: ', this.total_possible_matches)
+
     if(this.stats.matches === this.total_possible_matches) {
 
       if(this.stats.accuracy > this.stats.highest_accuracy || this.stats.highest_accuracy===0) {
