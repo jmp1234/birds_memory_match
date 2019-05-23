@@ -1,185 +1,745 @@
 body {
   margin: 0;
   font-size: 0;
-  font-family: 'Open Sans', sans-serif;
-  background-color: rgba(135,206,250);
-}
-
-
-/* HEADER */
-.game-header {
-  height: 23vh;
-  font-size: 1rem;
-  text-align: center;
-  border-bottom: solid black;
-  background-color: #b8c6db;
-  background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
-  border-radius: 0 0 10px 10px;
-}
-.game-header > * {
-  display: inline-block;
-
-}
-.logo > img {
-  height: 22vh;
-}
-
-.logo {
-  left: 2%;
-  position: absolute;
-}
-.title {
-  font-size: 2rem;
-  margin-left: 12%;
-  margin-right: 5%;
-}
-
-
-.fa {
-  font-size: 30px;
-  color: black;
-  padding: 2px;
-  border-radius: 20%;
-  background-color: #b8c6db;
-  background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
-  position: relative;
-  display: inline-block;
-  margin: 5px;
-
-}
-.settings:hover, .about:hover {
-  border-bottom: solid black;
-}
-/* .settings, .about {
-  border-bottom: solid black;
-  border-top: solid black;
-  padding-top: 10px;
-  padding-bottom: 8px;
-} */
-
-
-/* STATS CONTAINER */
-
-.stats-container {
-  height: 76vh;
-  width: 26%;
-  font-size: 1rem;
-}
-
-.stats-container > div {
-  /* background-color: limegreen; */
-  height: 80%;
-  width: 70%;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.games-played, .attempts, .accuracy {
-  height: 15%;
-  margin: 5px auto;
-}
-.games-played, .attempts, .accuracy, .description {
-  border: solid black;
-  border-radius: 5px;
-  box-shadow: 0 10px 6px -6px #777;
+  height: 100vh;
+  font-family: 'Work Sans', sans-serif;
   background-color: #045de9;
   background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
 }
 
-.value {
+.fa {
+  cursor: pointer;
+}
+
+
+
+/* MAIN GAME AREA */
+.main {
+ text-align: center;
+ background-image: url('images/background.jpg');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ height: 100%;
+ font-size: 1rem;
+ width: 115vh;
+ position: fixed;
+ left: 50%;
+ transform: translateX(-50%);
+ border: 7px solid rgba(255, 215, 0, 0.6);
+ -moz-box-shadow:    inset 0 0 10px #000000;
+ -webkit-box-shadow: inset 0 0 10px #000000;
+ box-shadow:         inset 0 0 10px #000000;
+ box-sizing: border-box;
+ overflow: auto;
+}
+
+
+.play-game {
+  margin-top: 8vh;
+}
+
+.play-button {
+  cursor: pointer;
+  text-shadow: 0.15vw 0.15vw rgba(0, 55, 214, 0.67);
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 2.2rem;
+  border: 5px solid gold;
+  border-radius: 10px;
+  color: white;
+  background-color: #045de9;
+  background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+  padding: 0.3% 1.5% 0.3% 1.5%;
+}
+
+.play-button:hover {
+  font-size: 2.4rem;
+}
+
+.game-title {
+  margin-top: 5%;
+  font-family: 'Merriweather Sans', sans-serif;
+  color: white;
+  text-shadow: 1px 1px 1px #000,
+             3px 3px 5px blue;
+  position: relative;
+  height: 30vh;
+}
+
+.game-title h1 {
+  font-size: 3.7rem;
+  margin-top: 2vh;
+}
+
+.game-title h3 {
+  font-size: 3.2rem;
+  margin: 0;
+}
+
+
+/* STATS CONTAINER */
+
+
+
+/* WIN MODAL */
+.win-modal {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  background-color: rgba(135,206,250, 0.6);
+  top: 0;
+  padding-top: 25vh;
+  display: none;
+  z-index: 2;
+  font-size: 1rem;
+}
+
+.modal-content {
+  background-image: url('images/seagull-79658_1280.jpg'), linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 380px;
+  width: 510px;
+  margin: 0 auto;
   text-align: center;
+  font-family: 'Merriweather Sans', sans-serif;
+  position: relative;
+  color: blue;
+}
+
+.modal-content h2 {
+  font-size: 55px;
   font-weight: bold;
-  font-size: 1.3rem;
+  margin-bottom: 2vh;
+}
+.play-again-button {
+  margin-top: 4vh;
+}
+.play-again-button button {
+  background-image: url('images/bird.png'), linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.transparent-box {
+  background-color: rgba(238,232,170, 0.8);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  border: 3px solid navy;
+  box-sizing: border-box;
+}
+.modal-content, .transparent-box {
+  border-radius: 10px;
+  box-shadow: 0 2px 10px 2px rgba(0,0,0,0.1);
+}
+.play-again-button button {
+  font-size: 40px;
+  font-family: inherit;
+  background-color: rgba(255,255,255,0);
+  border: none;
+  color: inherit;
+  border: solid navy;
+}
+.play-again-button button:hover {
+  font-size: 45px;
 }
 
-.description {
-  height: 30%;
-  margin: 8% auto;
+.win-modal .fa-close {
+  float: right;
+  font-size: 20px;
+  color: black;
+  cursor: pointer;
+  padding: 5px;
+}
+.win-modal .fa-close:hover {
+  font-size: 30px;
 }
 
-.stats-container, #game-area {
+/*HELP MODAL*/
+.help-modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  background-color: transparent;
+}
+.help-modal .fa-close {
+  position: absolute;
+  font-size: 2rem;
+  right: 0.5px;
+  top: 0;
+}
+
+.help-modal .fa-close:hover {
+  font-size: 2.4rem;
+}
+
+
+.help-modal .instructions{
+  height: 65%;
+  background-color: rgba(240,230,140,0.7);
+  padding-top: 2vh;
+  margin-top: 5vh;
+  border-radius: 5px;
+  width: 85vh;
+  margin: 0 auto;
+  box-sizing: border-box;
+  margin-top: 8vh;
+  position: relative;
+  border: 2px solid dodgerblue;
+}
+
+.help-modal p {
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  text-align: center;
+  font-size: 1.2rem;
+  padding-top: 4vh;
+}
+
+.help-modal ol {
+  font-size: 1.2rem;
+}
+
+.help-modal li {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.help-modal h3 {
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+/*GAME MODAL*/
+.start-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #045de9;
+  background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+}
+.start-modal .fa-question{
+  left: 5px;
+}
+
+.start-modal .fa-close {
+  right: 5px;
+}
+
+.start-modal .fa-close, .start-modal .fa-question {
+  font-size: 50px;
+  cursor: pointer;
+  position: absolute;
+  color: 	rgba(255,215,0, 0.8);
+}
+.start-modal .fa-close:hover, .start-modal .fa-question:hover {
+  font-size: 55px;
+}
+
+.start-modal .stats-container {
+  position: absolute;
+}
+
+.start-modal .game-and-stats {
+  height: 100%;
+  width: 65vh;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.start-modal .game-area {
+  font-size: 0;
+  box-shadow: 0 10px 6px -6px #777;
+  border-radius: 1%;
+  width: 100%;
+  height: 65%;
   display: inline-block;
-  vertical-align: top;
+  position: relative;
+  background-color: rgba(241, 231, 254, 0.4);
+  margin-top: 5%;
 }
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  width: 80%;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid rgb(255, 215, 0);
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow:         inset 0 0 10px #000000;
+  box-sizing: border-box;
+  background-image: url('images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.start-modal .card {
+  width: 25%;
+  height: 25%;
+  display: inline-block;
+  font-size: 1rem;
+  position: relative;
+  cursor: pointer;
+  perspective: 1000px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.start-modal .back:hover {
+  width: 93.8%;
+  height: 93.8%;
+}
+
+
+.start-modal  .card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.start-modal  .card-flip {
+  transform: rotateY(180deg);
+}
+
+
+.start-modal  .front, .back {
+  height: 95%;
+  width: 95%;
+  position: absolute;
+  top: 2.5%;
+  left: 2.5%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  backface-visibility: hidden;
+}
+
+.start-modal .back {
+  background-image: url('images/bird.png'), linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+  background-size: 100%;
+  background-position: center;
+  border: navy solid;
+  background-color: #b8c6db;
+}
+
+.main-cards {
+  position: relative;
+  width: 60%;
+  display: inline-block;
+  border-radius: 6px;
+  padding: auto;
+  left: 0;
+  font-size: 0;
+  margin-top: 5%;
+  border-bottom: 3px solid gold;
+  padding-bottom: 3%;
+}
+.card-main {
+  background-image: url('images/bird.png'), linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: darkblue solid;
+  background-color: #b8c6db;
+  display: inline-block;
+  width: 13vh;
+  height: 18vh;
+  box-sizing: border-box;
+  border-radius: 4px;
+  opacity: 0.95;
+}
+.left {
+   transform: rotate3d(0.1,0.1, 0.1, 15deg);
+}
+.middle {
+  left: 130px;
+}
+.right {
+  left: 260px;
+  transform: rotate3d(0.1,0.1, 0.1, -15deg);
+}
+
+.start-modal .front {
+  background-size: 100% 100%;
+  background-position: cover;
+  border: 1px navy solid;
+  transform: rotateY(180deg);
+}
+
+  /* STATS */
+
+.statistics {
+  font-size: 0;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 40%;
+}
+
+.attempts, .accuracy, .description {
+  border: 2px solid rgba(255,215,0,0.7);
+  border-radius: 5px;
+  background-color: #045de9;
+  background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+  box-shadow: 0 2px 10px 2px rgba(0,0,0,0.1);
+}
+
 
 .reset-button {
   background-color: silver;
-  text-align: center;
-  display: inline-block;
-  padding: 8px;
+  padding: 4px;
   text-transform: uppercase;
-  border: solid black;
+  border: 2px solid dodgerblue;
+  margin-top: 1%;
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
 }
 
 
-button:hover {
+.reset-button:hover {
   cursor: pointer;
+  background-image: none;
   background-color: gainsboro;
 }
 
 
-/* GAME AREA */
-
-#game-area {
-  background-color: black;
-  height: 64vh;
-  width: 56%;
-  font-size: 0;
-  position: relative;
-  top: 6.5vh;
-}
-
-
-
-.card {
-  width: 16.66%;
-  height: 33.33%;
+.statistics .attempts, .accuracy {
+  width: 48%;
+  height: 20%;
+  margin: 5px auto;
   display: inline-block;
-  box-sizing: border-box;
-  font-size: 1rem;
-  position: relative;
-  cursor: pointer;
 }
 
-.front, .back {
-  height: 95%;
-  width: 95%;
+.statistics .accuracy {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-sizing: border-box;
-  border-radius: 5px;
+  right: 0;
+  color: white;
 }
 
-.front {
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: cover;
-  /* background-image: url('images/whopping_crane.jpeg'); */
+.statistics .label {
+  position: absolute;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
 }
 
-/* .front2 {
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: cover;
-  background-image: url('images/Western_Meadowlark.jpg');
-} */
+.statistics .value {
+  padding: 0;
+  text-align: right;
+  top: 0;
+  font-size: 1rem;
+  margin-top: 5%;
+  font-weight: bold;
+}
+.statistics .attempts .value {
+  padding-right: 2%;
+  color: white;
+}
+
+.description {
+  height: 35%;
+  margin: 0 auto;
+  position: relative;
+}
+.description .fun-fact{
+  text-align: left;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.statistics .description .value {
+  margin-top: 0;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
 
 
-.back{
-  background-image: url('images/bird.png');
-  background-image: url('images/bird.png'), linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center;
-  border: skyblue solid;
-  background-color: #b8c6db;
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 1200px) {
+
+  .description .fun-fact {
+    font-size: 0.9rem;
+  }
+  .game-header {
+    height: 160px;
+  }
 
 }
 
-/* .card:hover > .back {
-  display: none;
-} */
+@media only screen and (max-width: 990px) {
+
+  .logo > img{
+    height: 80%;
+    top: 10%;
+  }
+  .description .value {
+    font-size: 1rem;
+  }
+  .description .fun-fact {
+    text-align: left;
+    font-size: 0.7rem;
+  }
+  .help-modal p {
+    font-size: 1.0rem;
+    padding-top: 3vh;
+  }
+
+  .help-modal ol {
+    font-size: 1.0rem;
+  }
+
+  .help-modal h3 {
+    font-size: 1.3rem;
+  }
+}
+@media only screen and (max-width: 770px) {
+
+  .main {
+    width: 100%;
+  }
+  .content {
+    width: 100%;
+  }
+
+  .game-title h1 {
+    font-size: 3.2rem;
+  }
+  .game-title h3 {
+    font-size: 2.7rem;
+  }
+  .card-main {
+    width: 12vh;
+    height: 17vh;
+  }
+
+  .play-game {
+    margin-top: 11vh;
+  }
+
+
+  .description .value {
+    padding-top: 2px;
+    padding-bottom: 4px;
+  }
+  .label {
+    font-size: 0.8rem;
+  }
+
+  .game-header {
+    height: 150px;
+  }
+  .game-area {
+    height: 80%;
+  }
+  .settings, .about {
+    vertical-align: bottom;
+  }
+  .stats-container > div {
+    width: 80%;
+  }
+
+  .help-modal .instructions{
+    width: 95%;
+  }
+  .help-modal p {
+    font-size: 1.0rem;
+    padding-top: 3vh;
+  }
+
+  .help-modal ol {
+    font-size: 1.0rem;
+  }
+
+  .help-modal h3 {
+    font-size: 1.3rem;
+  }
+}
+
+
+@media only screen and (max-width: 580px) {
+
+  .card-main {
+    width: 10vh;
+    height: 15vh;
+  }
+
+  .main {
+    padding-top: 10%;
+  }
+  .play-button {
+    font-size: 2.0rem;
+  }
+
+  .start-modal .fa-question {
+    left: 0;
+    font-size: 22px;
+  }
+
+  .start-modal .fa-close {
+    right: 0;
+    font-size: 22px;
+  }
+  .start-modal .fa-close:hover, .start-modal .fa-question:hover {
+    font-size: 27px;
+  }
+
+  .modal-content {
+    height: 50vh;
+    width: 90%;
+  }
+  .modal-content h2 {
+    font-size: 2rem;
+  }
+
+  .play-again-button button {
+    font-size: 1rem;
+  }
+  .play-again-button button:hover {
+    font-size: 1.2rem;
+  }
+
+}
+
+@media only screen and (max-width: 420px) {
+  .card-main {
+    width: 7vh;
+    height: 12vh;
+  }
+
+  .play-game {
+    margin-top: 15vh;
+  }
+  .play-button {
+    font-size: 1.8rem;
+  }
+  .game-title h1 {
+    font-size: 2.9rem;
+  }
+  .game-title h3 {
+    font-size: 2.4rem;
+  }
+
+  .start-modal .game-and-stats {
+    height: 85vh;
+    width: 50vh;
+  }
+
+  .start-modal .game-area {
+    width: 100%;
+    height: 50vh;
+    margin-top: 10%;
+  }
+
+  .statistics {
+    margin-top: 5vh;
+    height: 45%;
+  }
+  .reset-button {
+    margin-top: 4%;
+  }
+}
+
+@media only screen and (max-width: 420px) and (min-height: 800px){
+  .start-modal .game-and-stats {
+    width: 43vh;
+  }
+
+  .start-modal .game-area {
+    height: 43vh;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .statistics .value {
+    font-size: 0.8rem;
+  }
+  .statistics .label {
+    font-size: 0.6rem;
+  }
+  .description .fun-fact {
+    font-size: 0.6rem;
+  }
+
+  .modal-content h2 {
+    font-size: 1.3rem;
+  }
+  .modal-content p {
+    font-size: 0.9rem;
+  }
+
+  .help-modal p {
+    font-size: 0.8rem;
+    padding-top: 1vh;
+  }
+
+  .help-modal ol {
+    font-size: 0.8rem;
+  }
+
+  .help-modal h3 {
+    font-size: 1.1rem;
+  }
+
+}
+
+@media only screen and (max-height: 532px) {
+  .main-cards {
+    margin-top: 8%;
+  }
+  .start-modal .game-and-stats {
+    /* width: 80vh; */
+    height: 90vh;
+  }
+  .statistics .label {
+    font-size: 0.8rem;
+  }
+  .statistics .value {
+    font-size: 0.8rem;
+  }
+  .description .fun-fact {
+    font-size: 0.6rem;
+  }
+}
+
+@media only screen and (max-height: 479px) {
+  .game-title h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2vh;
+  }
+  .game-title h3 {
+    font-size: 2rem;
+  }
+
+  .play-game {
+    margin-top: 20px;
+  }
+
+  .main {
+    padding-top: 0;
+  }
+}

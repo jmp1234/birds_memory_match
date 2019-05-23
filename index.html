@@ -4,125 +4,93 @@
     <title>Memory Match</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/bird.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Anton|Merriweather+Sans|Work+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Chicle" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="main.js"></script>
+    <script src="cards.js"></script>
+    <script src="stats.js"></script>
+    <script src="game.js"></script>
+    <script src="oop.js"></script>
   </head>
   <body>
-    <header class="game-header">
-      <div class="logo"><img src="images/bird.png"></div>
-      <div class="title"><h1>Match The Birds</h1></div>
-      <div class="settings">
-        <a href="#"><i class="fa fa-cog fa-fw"></i></a>
+    <!--MAIN PAGE -->
+    <div class="main">
+      <div class="game-title">
+        <h1>Birds</h1>
+        <h3>Memory Match</h3>
       </div>
-      <div class="about">
-          <a href="about.html" target="_blank"><i class="fa fa-question fa-fw"></i></a>
+      <div class="main-cards">
+        <div class="card-main left"></div>
+        <div class="card-main middle"></div>
+        <div class="card-main right"></div>
       </div>
-
-    </header>
-
-    <div class="stats-container">
-      <div>
-        <div class="games-played">
-          <div class="label">Games Played:</div>
-          <div class="value">5</div>
-        </div>
-        <div class="attempts">
-          <div class="label">Attempts:</div>
-          <div class="value">5</div>
-        </div>
-        <div class="accuracy">
-          <div class="label">Accuracy:</div>
-          <div class="value">50%</div>
-        </div>
-        <div class="description">
-          <div class="label">Description:</div>
-        </div>
-        <button class="reset-button"type="button" name="button">Reset Game</button>
+      <div class="play-game">
+        <span class="play-button">PLAY GAME</span>
       </div>
     </div>
 
-    <div id="game-area">
-        <!-- <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
+    <!--GAME OVER MODAL -->
+    <div class="win-modal">
+      <div class="modal-content">
+        <div class="transparent-box">
+          <i class="fa fa-close"></i>
+          <h2>YOU WIN!</h2>
+          <p class="attempts-after-win"></p>
+          <p class="accuracy-after-win"></p>
+          <p class="highest-accuracy-after-win"></p>
+          <div class="play-again-button"><button>Play Again</button></div>
         </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class=" front front2"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class=" front front2"></div>
-          <div class="back"></div>
-        </div> -->
-        <!-- <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div>
-        <div class="card">
-          <div class="front"></div>
-          <div class="back"></div>
-        </div> -->
-
+      </div>
     </div>
 
+    <!--Start Modal -->
+    <div class="start-modal">
+      <div class="content">
+        <i class="fa fa-question" aria-hidden="true"></i>
+        <i class="fa fa-close" aria-hidden="true"></i>
+        <div class="game-and-stats">
+          <!-- CARDS -->
+          <div class="game-area"></div>
+          <!-- STATS -->
+          <div class="statistics">
+            <div class="attempts">
+              <div class="label">Attempts:</div>
+              <div class="value"></div>
+            </div>
+            <div class="accuracy">
+              <div class="label">Accuracy:</div>
+              <div class="value"></div>
+            </div>
+            <div class="description">
+              <div class="label">Description of Bird:</div>
+              <div class="value"></div>
+              <div class="fun-fact"></div>
+            </div>
+            <button class="reset-button"type="button" name="button">Reset Game</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- HELP MODAL -->
+    <div class="help-modal">
+      <div class="content">
+        <div class="instructions">
+          <i class="fa fa-close"></i>
+          <h3>How to Play:</h3>
+          <ol>
+            <li>Click on the cards to flip them over.</li>
+            <li>For each pair of cards correctly matched, a description of the pictured birds will
+            appear.</li>
+            <li>Keep playing until all cards are faced up.</li>
+          </ol>
+          <p>Have fun testing your memorization skills and improving upon your knowledge about
+          birds!</p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
-
-<!-- Birdwatching Game:
-Match the birds -->
