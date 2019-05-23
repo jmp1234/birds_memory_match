@@ -312,6 +312,8 @@ body {
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
 }
 
 .start-modal  .card-flip {
