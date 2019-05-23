@@ -22,17 +22,16 @@ body {
  background-repeat: no-repeat;
  height: 100%;
  font-size: 1rem;
- /* width: 75%; */
  width: 115vh;
  position: fixed;
  left: 50%;
  transform: translateX(-50%);
  border: 7px solid rgba(255, 215, 0, 0.6);
  -moz-box-shadow:    inset 0 0 10px #000000;
--webkit-box-shadow: inset 0 0 10px #000000;
-box-shadow:         inset 0 0 10px #000000;
-box-sizing: border-box;
-overflow: auto;
+ -webkit-box-shadow: inset 0 0 10px #000000;
+ box-shadow:         inset 0 0 10px #000000;
+ box-sizing: border-box;
+ overflow: auto;
 }
 
 
@@ -66,10 +65,12 @@ overflow: auto;
   position: relative;
   height: 30vh;
 }
+
 .game-title h1 {
   font-size: 3.7rem;
   margin-top: 2vh;
 }
+
 .game-title h3 {
   font-size: 3.2rem;
   margin: 0;
@@ -78,95 +79,9 @@ overflow: auto;
 
 /* STATS CONTAINER */
 
-.stats-container {
-  height: 100%;
-  width: 26%;
-  font-size: 1rem;
-}
-
-.stats-container > div {
-  height: 80%;
-  width: 70%;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.attempts, .accuracy {
-  height: 10%;
-  margin: 5px auto;
-}
-.games-played, .attempts, .accuracy, .description {
-  border: 2px solid rgba(255,215,0,0.7);
-  border-radius: 5px;
-  background-color: #045de9;
-  background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
-  box-shadow: 0 2px 10px 2px rgba(0,0,0,0.1);
-}
-.value {
-  text-align: center;
-}
-
-.description {
-  height: 47%;
-  margin: 8% auto;
-  position: relative;
-}
-.description .value {
-  padding-top: 5px;
-  padding-bottom: 10px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: white;
-}
-.description .fun-fact{
-  text-align: left;
-  padding-left: 5px;
-  padding-right: 5px;
-  font-size: 0.9rem;
-  color: white;
-}
-
-.description .citation {
-  position: absolute;
-  bottom: 0;
-  font-size: 0.4rem;
-  word-wrap: break-word;
-}
-
-.stats-container, .game-container {
-  display: inline-block;
-  vertical-align: top;
-}
-
-.reset-button {
-  background-color: silver;
-  padding: 4px;
-  text-transform: uppercase;
-  border: 2px solid dodgerblue;
-  margin-top: 1%;
-  left: 50%;
-  position: relative;
-  transform: translateX(-50%);
-  border-radius: 4px;
-  background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
-}
 
 
-.reset-button:hover {
-  cursor: pointer;
-  background-image: none;
-  background-color: gainsboro;
-}
-
-
-/* GAME AREA */
-
-
-
-/* MODAL */
+/* WIN MODAL */
 .modal {
   height: 100vh;
   width: 100%;
@@ -228,7 +143,6 @@ overflow: auto;
 .play-again-button button:hover {
   font-size: 45px;
 }
-
 
 .modal .fa-close {
   float: right;
@@ -364,13 +278,13 @@ overflow: auto;
   transform: translateX(-50%);
   border: 5px solid rgb(255, 215, 0);
   -moz-box-shadow:    inset 0 0 10px #000000;
- -webkit-box-shadow: inset 0 0 10px #000000;
- box-shadow:         inset 0 0 10px #000000;
- box-sizing: border-box;
- background-image: url('images/background.jpg');
- background-size: cover;
- background-position: center;
- background-repeat: no-repeat;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow:         inset 0 0 10px #000000;
+  box-sizing: border-box;
+  background-image: url('images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 
@@ -469,6 +383,8 @@ overflow: auto;
   transform: rotateY(180deg);
 }
 
+  /* STATS */
+
 .statistics {
   font-size: 0;
   position: relative;
@@ -477,10 +393,41 @@ overflow: auto;
   height: 40%;
 }
 
+.attempts, .accuracy, .description {
+  border: 2px solid rgba(255,215,0,0.7);
+  border-radius: 5px;
+  background-color: #045de9;
+  background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+  box-shadow: 0 2px 10px 2px rgba(0,0,0,0.1);
+}
+
+
+.reset-button {
+  background-color: silver;
+  padding: 4px;
+  text-transform: uppercase;
+  border: 2px solid dodgerblue;
+  margin-top: 1%;
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+}
+
+
+.reset-button:hover {
+  cursor: pointer;
+  background-image: none;
+  background-color: gainsboro;
+}
+
+
 .statistics .attempts, .accuracy {
   width: 48%;
-  display: inline-block;
   height: 20%;
+  margin: 5px auto;
+  display: inline-block;
 }
 
 .statistics .accuracy {
@@ -512,7 +459,16 @@ overflow: auto;
 .description {
   height: 35%;
   margin: 0 auto;
+  position: relative;
 }
+.description .fun-fact{
+  text-align: left;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 0.9rem;
+  color: white;
+}
+
 .statistics .description .value {
   margin-top: 0;
   text-align: center;
