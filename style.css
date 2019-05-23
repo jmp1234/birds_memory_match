@@ -314,6 +314,7 @@ body {
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
+  overflow: visible;
 }
 
 .start-modal  .card-flip {
@@ -331,6 +332,8 @@ body {
   border-radius: 5px;
   background-repeat: no-repeat;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
 }
 
 .start-modal .back {
