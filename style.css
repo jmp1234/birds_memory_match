@@ -29,6 +29,8 @@ body {
  border: 7px solid rgba(255, 215, 0, 0.6);
  -moz-box-shadow:    inset 0 0 10px #000000;
  -webkit-box-shadow: inset 0 0 10px #000000;
+ -o-box-shadow:      inset 0 0 10px #000000;
+ -ms-box-shadow:     inset 0 0 10px #000000;
  box-shadow:         inset 0 0 10px #000000;
  box-sizing: border-box;
  overflow: auto;
@@ -278,6 +280,8 @@ body {
   transform: translateX(-50%);
   border: 5px solid rgb(255, 215, 0);
   -moz-box-shadow:    inset 0 0 10px #000000;
+  -ms-box-shadow:    inset 0 0 10px #000000;
+  -o-box-shadow:    inset 0 0 10px #000000;
   -webkit-box-shadow: inset 0 0 10px #000000;
   box-shadow:         inset 0 0 10px #000000;
   box-sizing: border-box;
@@ -314,6 +318,8 @@ body {
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
   overflow: visible;
 }
 
@@ -334,6 +340,8 @@ body {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
 }
 
 .start-modal .back {
@@ -372,6 +380,10 @@ body {
 }
 .left {
    transform: rotate3d(0.1,0.1, 0.1, 15deg);
+   -webkit-transform:rotate3d(0.1,0.1, 0.1, 15deg);
+   -o-transform:rotate3d(0.1,0.1, 0.1, 15deg);
+   -ms-transform:rotate3d(0.1,0.1, 0.1, 15deg);
+   -moz-transform:rotate3d(0.1,0.1, 0.1, 15deg);
 }
 .middle {
   left: 130px;
@@ -379,6 +391,11 @@ body {
 .right {
   left: 260px;
   transform: rotate3d(0.1,0.1, 0.1, -15deg);
+  -webkit-transform: rotate3d(0.1,0.1, 0.1, -15deg);
+  -o-transform: rotate3d(0.1,0.1, 0.1, -15deg);
+  -ms-transform: rotate3d(0.1,0.1, 0.1, -15deg);
+  -moz-transform: rotate3d(0.1,0.1, 0.1, -15deg);
+
 }
 
 .start-modal .front {
