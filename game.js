@@ -173,14 +173,16 @@ class BirdGame {
     } else {
       $('.highest-accuracy-after-win').text('Your accuracy of ' + this.stats.accuracy + ' is a new personal best! Good job!')
     }
-    $('.modal').show();
+    $('.win-modal').show();
   }
 
   hide_modal() {
-      if($('.modal').css('display') !== 'none') {
-        $('.modal').hide();
-      } else {
+      if($('.win-modal').css('display') !== 'none') {
+        $('.win-modal').hide();
+      } else if($('.help-modal').css('display') !== 'none') {
         $('.help-modal').hide();
+      } else {
+        this.close_game_modal();
       }
   }
 
@@ -194,7 +196,7 @@ class BirdGame {
     this.reset_button_clicked();
   }
 
-  //DISPLAY HELP Modal
+//DISPLAY HELP Modal
   open_help_modal() {
     $('.help-modal').fadeIn();
   }
@@ -206,7 +208,7 @@ class BirdGame {
     $('.play-again-button').on('click', this.hide_modal);
     $('.fa-close').on('click', this.hide_modal);
     $('.play-button').on('click', this.display_game);
-    $('.start-modal .fa-close').on('click', this.close_game_modal);
+    $('.start-modal .fa-close').on('click', this.hide_modal);
     $('.fa-question').on('click', this.open_help_modal);
   }
 
