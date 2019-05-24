@@ -147,11 +147,12 @@ body {
 }
 
 .win-modal .fa-close {
-  float: right;
   font-size: 20px;
   color: black;
   cursor: pointer;
   padding: 5px;
+  position: absolute;
+  right: 0;
 }
 .win-modal .fa-close:hover {
   font-size: 30px;
@@ -300,6 +301,7 @@ body {
   position: relative;
   cursor: pointer;
   perspective: 1000px;
+  -webkit-perspective: 1000px;
   background-color: transparent;
   cursor: pointer;
 }
@@ -643,6 +645,13 @@ body {
   }
   .play-again-button button:hover {
     font-size: 1.2rem;
+  }
+
+  .transparent-box {
+    background-color: rgba(238,232,170, 0.9);
+  }
+  .modal-content {
+    background-image: none;
   }
 
 }
