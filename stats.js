@@ -3,7 +3,6 @@ class Stats {
     this.matches = 0;
     this.attempts = 0;
     this.accuracy = 0;
-    this.games_played = 0;
     this.highest_accuracy = 0;
 
     this.display_stats();
@@ -33,7 +32,6 @@ class Stats {
   }
 
   display_stats() {
-    $('.games-played .value').text(this.games_played);
     $('.attempts .value').text(this.attempts);
 
     if(this.accuracy === 'NaN%') {
