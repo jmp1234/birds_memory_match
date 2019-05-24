@@ -7,8 +7,7 @@ Once the player has match 2 cards they will be displayed face up until all pairs
 displayed a message that they have won the game. As the user clicks through the cards stats will be kept letting the user know how many attempts and the
 accuracy of their choices.
 
-<<<<<<< HEAD
-=======
+
 
 ## Technologies Used
 > - HTML5
@@ -19,6 +18,3 @@ accuracy of their choices.
 ## Author
 > Johnny Pham - johnnypham944@gmail.com\
 > https://github.com/jmp1234
-
->>>>>>> 1bb4bd45606181ca9e43f1845893910fc2ec1284
-
