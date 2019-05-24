@@ -138,6 +138,8 @@ class BirdGame {
   notAMatch() {
     this.stats.accuracy = (this.stats.matches/this.stats.attempts*100).toFixed(2) + '%';
     this.wait_for_timeout = true;
+    console.log('cards: ', this.cards)
+    console.log('this.first_card_clicked: ', this.first_card_clicked)
     setTimeout(function() {
       $(this.first_card_clicked.card_inner).removeClass('card-flip');
       $(this.second_card_clicked.card_inner).removeClass('card-flip');
@@ -146,18 +148,17 @@ class BirdGame {
       this.second_card_clicked = null;
 
       this.wait_for_timeout = false;
-    }.bind(this), 1200);
+    }.bind(this), 1000);
   }
 
   reset_button_clicked() {
     this.first_card_clicked = null;
     this.stats.resetDescriptionBox();
-
     this.stats.reset_stats();
     for(var i=0; i<this.cards.length; i++) {
       $(this.cards[i].domElement).remove();
     }
-
+    this.cards = [];
     this.createCards();
   }
 
