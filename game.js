@@ -152,7 +152,6 @@ class BirdGame {
   reset_button_clicked() {
     this.first_card_clicked = null;
     this.stats.resetDescriptionBox();
-    this.stats.games_played++;
 
     this.stats.reset_stats();
     for(var i=0; i<this.cards.length; i++) {
