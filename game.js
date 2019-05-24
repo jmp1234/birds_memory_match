@@ -138,20 +138,17 @@ class BirdGame {
   notAMatch() {
     this.stats.accuracy = (this.stats.matches/this.stats.attempts*100).toFixed(2) + '%';
     this.wait_for_timeout = true;
-    console.log('cards: ', this.cards)
-    console.log('this.first_card_clicked: ', this.first_card_clicked)
     setTimeout(function() {
       $(this.first_card_clicked.card_inner).removeClass('card-flip');
       $(this.second_card_clicked.card_inner).removeClass('card-flip');
-
       this.first_card_clicked = null;
       this.second_card_clicked = null;
-
       this.wait_for_timeout = false;
     }.bind(this), 1000);
   }
 
   reset_button_clicked() {
+    this.wait_for_timeout = false;
     this.first_card_clicked = null;
     this.stats.resetDescriptionBox();
     this.stats.reset_stats();
