@@ -49,11 +49,6 @@ class BirdGame {
         bird_description: 'Ferruginous Pygmy-Owls sometimes are active by day, although they primarily are crepuscular. ',
         source: '“Ferruginous Pygmy-Owl Glaucidium Brasilianum.” Neotropical Birds Online, neotropical.birds.cornell.edu/Species-Account/nb/species/fepowl/overview.',
       },
-      // 'California Condor': {
-      //   link: 'images/California_Condor.jpg',
-      //   bird_description: 'California Condors are the largest wild birds in North America.',
-      //   source: '“California Condor Identification, All About Birds, Cornell Lab of Ornithology.” , All About Birds, Cornell Lab of Ornithology, www.allaboutbirds.org/guide/California_Condor/id.',
-      // },
     }
 
     this.card_clicked = this.card_clicked.bind(this);
@@ -160,7 +155,7 @@ class BirdGame {
   }
 
 //DISPLAY GAME OVER MODAL
-  show_modal () {
+  show_modal() {
     this.stats.setNewHighScore();
     $('.attempts-after-win').text('You had ' + this.stats.attempts + ' attempts');
     $('.accuracy-after-win').text('Your accuracy was ' + this.stats.accuracy);
@@ -170,7 +165,9 @@ class BirdGame {
     } else {
       $('.highest-accuracy-after-win').text('Your accuracy of ' + this.stats.accuracy + ' is a new personal best! Good job!')
     }
-    $('.win-modal').show();
+    setTimeout(function() {
+      $('.win-modal').show()
+    }, 1200);
   }
 
   hide_modal() {
@@ -208,12 +205,4 @@ class BirdGame {
     $('.start-modal .fa-close').on('click', this.hide_modal);
     $('.fa-question').on('click', this.open_help_modal);
   }
-
-
-
-
-
-
-
-
 }
