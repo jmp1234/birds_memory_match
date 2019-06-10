@@ -787,9 +787,21 @@ body {
     width: 60%;
   }
 
+  .fun-fact, .description .label {
+    display: none;
+  }
+  
+  .error-description {
+    display: block;
+    font-size: 0.6rem;
+    text-align: center;
+    color: white;
+    margin-top: 0;
+  }
+
 }
 
-@media all and (orientation:landscape) {
+/* @media all and (orientation:landscape) {
     .fun-fact, .description .label {
          display: none;
     }
@@ -800,4 +812,4 @@ body {
          color: white;
          margin-top: 0;
     }
-}
+} */
